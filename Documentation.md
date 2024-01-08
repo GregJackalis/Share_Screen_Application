@@ -1,3 +1,7 @@
+<!-- This script was made by Grigorios Tsakalis.
+For further information and a fully detailed documentation, please visit my repository at:
+https://github.com/GregJackalis/Share_Screen_Application/blob/main/Documentation.md -->
+
 # Share Screen Application Documentation
 #### Created by Grigorios Tsakalis
 
