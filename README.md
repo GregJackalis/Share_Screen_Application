@@ -14,13 +14,17 @@ Therefore, the peer.py script contains a class that can behave as a Client but a
 
 ## Scripts and their Purpose
 ### my_gui.ui
-This file was exported from the Qt Designer app that I used in order to build my own User Interface and even name my elements- so that I can use them later-on on my application. Once the making of the GUI was done, it was time to use it on my Python project.
+-----------------------------------------------------------------------------------------------------
+This file was exported from the Qt Designer app that I used in order to build my own User Interface and even name my elements- so that I can use them later-on on my application. Once the making of the GUI was done, it was time to use it on my Python project.<br><br>
+
 
 ### gui_client.py
+-----------------------------------------------------------------------------------------------------
 This is the "main" script of my project, meaning that it needs to be run first. This script "connects"" the GUI that I've already made, with the Peer script that contains both Client and Server behaviours. What it does is that it gives functionality to the button on the Interface, then based on the button that is pressed (and if the user has chosen to be the user of course by entering 2 on the terminal) the interface imports and uses Client behaviour attributes- by making a Peer class instance- to send data to the server but also wait and handle a response.<br>
 However, if the user enters 1 on the terminal when running this script, the user will enter Share Screen mode, a.k.a. the user will be the Server- by making a Peer class instance as well- and then the Server behaviour attributes will come in and await for a Client to Connect.
 
 ### peer.py
+-----------------------------------------------------------------------------------------------------
 This is the second most important script of my project, and it's the one responsible for a secure and reliable conenction between Client and Server by using Socket Programming principles. The script includes two classes:
 1) The first called **ClientThread** is used to create a thread between the Client and the Server so that the Client will always await a response from the Server (while also checking if there is still a connection and an ucoming message of course).
 
@@ -41,14 +45,15 @@ This is the second most important script of my project, and it's the one respons
     - __Check_Action function__: This function is used just like the function mentioned above. The gui_client.py script imports and uses this function to send the User's token (None in case the user doesn't have a token) to the Server for futher validation. Then from that point, if the token is valid, the handle_verification_response function is used to trigger the Share Screen Process. <br><br>
     - __Send_Share_msg function__: This function as mentioned aboved, is only callable through the handle_verification_response function. This function is responsible for notifying the Server that the Client has received the "Valid Token" function, the user is notified of that (through a message box that popped up), and the Server needs to start its side ofr the Share Screen Process- meaning that the subprocess command needs to be run. <br><br>
     - __Close_Connection function__: This funtion is used fromt the close buttons used in the Graphical Interface, so that the socket connection and the application is closed and handled gracefully without breaking the app or the Server-Side <br><br>
-    - __Make_Box function__: This funtion is used to save a few lines of code when it comes to make a pop-up message box on the User Interface. It takes a message as a parameter, and then by using elements from the PyQt5 library, a message box is made and showed with that message. <br><br>
+    - __Make_Box function__: This funtion is used to save a few lines of code when it comes to make a pop-up message box on the User Interface. It takes a message as a parameter, and then by using elements from the PyQt5 library, a message box is made and showed with that message. <br><br><br>
 
 
 ### vignere_cipher.py
 -----------------------------------------------------------------------------------------------------
-This script implements the vignere cipher algorithm, which my application uses when sending data from the Client side to the Server and back. At first, I settled in with the JWT library and the hashing method but I realised that there was a small "window" for breachers, and that was transimitting sensitive data through both sides. Thus, whenever sensitive information is sent, such as a token or login credentials, the data is encrypted and then decrypted with a secret key. Keep in mind, the secret key along with other essentail security-related information, are saved in a .env file. 
+This script implements the vignere cipher algorithm, which my application uses when sending data from the Client side to the Server and back. At first, I settled in with the JWT library and the hashing method but I realised that there was a small "window" for breachers, and that was transimitting sensitive data through both sides. Thus, whenever sensitive information is sent, such as a token or login credentials, the data is encrypted and then decrypted with a secret key. Keep in mind, the secret key along with other essentail security-related information, are saved in a .env file. <br><br>
 
 ### auth.py
+-----------------------------------------------------------------------------------------------------
 This script is the "core" of my application's security. It includes the JWT token along with its functions. 
 - First of all, the Secret Key, Algorithm, and everything else related to the making of the token, are saved in a **.env file** and are accessed only by using the dotenv library, making it extra secure since no file names are used.<br>
 - Secondly, the **create_access_token** function which is only used when the given credentials are correct, is responsible for the making of the token. This happens, by combining the given data in a dictionary, a secret key, and an algorithm (Keep in mind, the token in general is made out of thrree parts, for more information on JWT, go to the [JWT Documentation](https://jwt.io/introduction)) <br>
