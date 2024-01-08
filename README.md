@@ -21,8 +21,9 @@ This file was exported from the Qt Designer app that I used in order to build my
 ### gui_client.py
 -----------------------------------------------------------------------------------------------------
 This is the "main" script of my project, meaning that it needs to be run first. This script "connects"" the GUI that I've already made, with the Peer script that contains both Client and Server behaviours. What it does is that it gives functionality to the button on the Interface, then based on the button that is pressed (and if the user has chosen to be the user of course by entering 2 on the terminal) the interface imports and uses Client behaviour attributes- by making a Peer class instance- to send data to the server but also wait and handle a response.<br>
-However, if the user enters 1 on the terminal when running this script, the user will enter Share Screen mode, a.k.a. the user will be the Server- by making a Peer class instance as well- and then the Server behaviour attributes will come in and await for a Client to Connect.
+However, if the user enters 1 on the terminal when running this script, the user will enter Share Screen mode, a.k.a. the user will be the Server- by making a Peer class instance as well- and then the Server behaviour attributes will come in and await for a Client to Connect.<br><br>
 
+-----------------------------------------------------------------------------------------------------
 ### peer.py
 -----------------------------------------------------------------------------------------------------
 This is the second most important script of my project, and it's the one responsible for a secure and reliable conenction between Client and Server by using Socket Programming principles. The script includes two classes:
