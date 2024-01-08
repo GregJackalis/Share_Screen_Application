@@ -1,4 +1,7 @@
-# Share Screen Application Documentation ### Made by Grigorios Tsakalis
+# Share Screen Application Documentation
+#### Created by Grigorios Tsakalis
+
+## Introduction
 This is the official documentation for the Share_Screen_Application.
 This project was made for the Assignment on the Networks & Security module and its aim is to simulate a "Screen-Mirroring" Application, through the usage of Socket Programming in Python. In addition, authorization and data encryption needed to be used to make the application as safe and strong as possible, thus a variety of libraries and encryptions were used.
 
