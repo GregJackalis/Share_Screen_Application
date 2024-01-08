@@ -37,27 +37,33 @@ def run_live():
     logging.info(f"[SERVER] Accepted connection from {addr}")
 
     while True:
-        # Take screenshot using PyAutoGUI
-        img = pyautogui.screenshot()
+        try:
+            # Take screenshot using PyAutoGUI
+            img = pyautogui.screenshot()
 
-        # Convert the screenshot to a numpy array
-        frame = np.array(img)
+            # Convert the screenshot to a numpy array
+            frame = np.array(img)
 
-        # Convert it from BGR(Blue, Green, Red) to RGB(Red, Green, Blue)
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            # Convert it from BGR(Blue, Green, Red) to RGB(Red, Green, Blue)
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-        # Resize the frame to a consistent size
-        frame = cv2.resize(frame, resolution)
+            # Resize the frame to a consistent size
+            frame = cv2.resize(frame, resolution)
 
-        # Get the size of the frame
-        frame_size = struct.pack("Q", len(pickle.dumps(frame)))
+            # Get the size of the frame
+            frame_size = struct.pack("Q", len(pickle.dumps(frame)))
 
-        # Send the size and the frame to the client
-        client_socket.sendall(frame_size + pickle.dumps(frame))
+            # Send the size and the frame to the client
+            client_socket.sendall(frame_size + pickle.dumps(frame))
 
-        # Break the loop if 'q' is pressed
-        if cv2.waitKey(1) == ord('q'):
-            break
+            # Break the loop if 'q' is pressed
+            if cv2.waitKey(1) == ord('q'):
+                break
+        except OSError as e:
+            if e.errno == 9:
+                logging.info(
+                    f"[SERVER] Client with address {addr} has lost connection.")
+                break
 
     # Release resources
     client_socket.close()
