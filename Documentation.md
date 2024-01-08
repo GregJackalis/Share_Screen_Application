@@ -3,14 +3,14 @@
 
 ## Introduction
 This is the official documentation for the Share_Screen_Application.
-This project was made for the Assignment on the Networks & Security module and its aim is to simulate a "Screen-Mirroring" Application, through the usage of Socket Programming in Python. In addition, authorization and data encryption needed to be used to make the application as safe and strong as possible, thus a variety of libraries and encryptions were used.
+This project was made for the Assignment on the Networks & Security module and its aim is to simulate a "Screen-Mirroring" Application, through the usage of Socket Programming in Python. In addition, authorization and data encryption needed to be used to make the application as safe and strong as possible, thus a variety of libraries and encryptions were used.<br>
 
 ## Target Audience
-Whether you're a computer science student or just a coding enthusiast, this project contains all the scripts that were made from scratch by me! For any further information or questions related to my work please don't hesitate to email me at: [grig.tsakalis@mc-class.gr](mailto:grig.tsakalis@mc-class.gr)
+Whether you're a computer science student or just a coding enthusiast, this project contains all the scripts that were made from scratch by me! For any further information or questions related to my work please don't hesitate to email me at: [grig.tsakalis@mc-class.gr](mailto:grig.tsakalis@mc-class.gr)<br>
 
 ## Getting Started
 The application includes nine Python Scripts, one .ui file, and other files (such as .env, requirements to be downloaded, and so on). The application started being made from the "Front-End" part which it was about setting up the GUI and the gui_client script. Then, it was time for Socket Programming to take place, and even though at first two different scripts (one for client and one for server) were made, I decided afterwards that I want to make as a Peer-to-Peer connection.<br>
-Therefore, the peer.py script contains a class that can behave as a Client but also as Server, the only difference is that the Server is in charge for checking the credentials- using the the authentication.py script- and to also start sharing their screen once everything is set up. The client's behaviour attributes on the other hand, gives the user the ability to try and sign in as many times as they want and once the credentials are correct, to connect to the remote screen.
+Therefore, the peer.py script contains a class that can behave as a Client but also as Server, the only difference is that the Server is in charge for checking the credentials- using the the authentication.py script- and to also start sharing their screen once everything is set up. The client's behaviour attributes on the other hand, gives the user the ability to try and sign in as many times as they want and once the credentials are correct, to connect to the remote screen.<br><br>
 
 ## Scripts and their Purpose
 ### my_gui.ui
@@ -78,7 +78,7 @@ This script first of all uses a function from the log_config.py script which is 
 ### client_screen.py
 -----------------------------------------------------------------------------------------------------
 This script is run from the subprocess command on the peer.py script (just like the server_screen.py script) and what it does is that it first waits 3.5 seconds for the server image socket to start running, and then connect (this time.sleep() command was used due to issues that were made because of the sockets running at the same time). The script also implements a method to log information, while also creates a new socket at the same address and port as the image-server.<br>
-In the "while True" loop, the client awaits for incoming image data continiously, while also using try-except block to gracefully exit the loop in case an error occurs. Then, the size of the payload is determined, where "Q" represents an unsigned long long integer (8 bytes) After the payload size is determined from the all the data received, then it extracts the packet message size. In the second "while True" loop, it receives the actual frame data until it accumulates enough bytes and then the frame data are extracted. Lastly, by using the frame_loads method, it transforms the frame data into a Python object, and then the frame is finally showed using the OpenCV library.
+In the "while True" loop, the client awaits for incoming image data continiously, while also using try-except block to gracefully exit the loop in case an error occurs. Then, the size of the payload is determined, where "Q" represents an unsigned long long integer (8 bytes) After the payload size is determined from the all the data received, then it extracts the packet message size. In the second "while True" loop, it receives the actual frame data until it accumulates enough bytes and then the frame data are extracted. Lastly, by using the frame_loads method, it transforms the frame data into a Python object, and then the frame is finally showed using the OpenCV library.<br><br>
 
 
 ### log_config.py
