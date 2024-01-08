@@ -10,7 +10,7 @@ Whether you're a computer science student or just a coding enthusiast, this proj
 Email me at: gregorytsak3@gmail.com 
 
 ## Getting Started
-The application includes 9 Python Scripts, 1 .ui file, and other files (such as .env, requirements to be downloaded, and so on). The applicaiton started being made from the "Front-End" part which it was about setting up the GUI and the gui_client script. Then, it was time for Socket Programming to take place, and even though at first two different scripts (one for client and one for server) were made, I decided afterwards that I want to make as a Peer-to-Peer connection.
+The application includes nine Python Scripts, one .ui file, and other files (such as .env, requirements to be downloaded, and so on). The applicaiton started being made from the "Front-End" part which it was about setting up the GUI and the gui_client script. Then, it was time for Socket Programming to take place, and even though at first two different scripts (one for client and one for server) were made, I decided afterwards that I want to make as a Peer-to-Peer connection.
 Therefore, the peer.py script contains a class that can behave as a Client but also as Server, the only difference is that the Server is in charge for checking the credentials- using the the authentication.py script- and to also start sharing their screen once everything is set up. The client's behaviour attributes on the other hand, gives the user the ability to try and sign in as many times as they want and once the credentials are correct, to connect to the remote screen.
 
 ## Scripts and their Purpose
@@ -26,8 +26,6 @@ This is the second most important script of my project, and it's the one respons
 1) The first called "ClientThread" is used to create a thread between the Client and the Server so that the Client will always await a response from the Server (while also checking if there is still a connection and an ucoming message of course).
 
 2) The second class with the name "Peer" is where all of this application's socket programming is included. Starting from the Server behaviour attributes, there are:
-        1. <u>Listen function</u>: it's used to listen for Clients that are trying to connect to the Server's address and port, and also handle messages using a function made in the state_machine.py script.
-    Then once handle_message function has returned the correct response, it is time for the right function to be called too
-        2. <u>Login function</u>: it's used to receive the credentials the Client sends to login. In this function, by using an if-statement and functions that are imported from the auth.py scripts, the credentials are thoroughly decrypted using the vignere cipher, then encrypted again to match the already hashed passwords that are saved in a .env file...and then finally a response is sent to the Client.
-
-        3. <u>Check_Token Funciotn</u>: ddfdf.
+        - <u>Listen function</u>: it's used to listen for Clients that are trying to connect to the Server's address and port, and also handle messages using a function made in the state_machine.py script. Then, once handle_message function has returned the correct response, it is time for the right function to be called too
+        - <u>Login function</u>: it's used to receive the credentials the Client sends to login. In this function, by using an if-statement and functions that are imported from the auth.py scripts, the credentials are thoroughly decrypted using the vignere cipher, then encrypted again to match the already hashed passwords that are saved in a .env file...and then finally a response is sent to the Client.
+        - <u>Check_Token Funciotn</u>: ddfdf.
