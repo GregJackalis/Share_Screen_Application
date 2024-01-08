@@ -1,3 +1,7 @@
+# This script was made by Grigorios Tsakalis.
+# For further information and a fully detailed documentation please visit my repository at:
+# https://github.com/GregJackalis/Share_Screen_Application/blob/main/Documentation.md
+
 # This is a simple state machine script used to "cover" a few
 # lines of code in the peer script.
 # It's much easier to handle each state in this function in a separate script than having

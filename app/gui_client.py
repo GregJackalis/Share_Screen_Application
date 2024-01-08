@@ -1,3 +1,8 @@
+# This script was made by Grigorios Tsakalis.
+# For further information and a fully detailed documentation please visit my repository at:
+# https://github.com/GregJackalis/Share_Screen_Application/blob/main/Documentation.md
+
+
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 import sys
