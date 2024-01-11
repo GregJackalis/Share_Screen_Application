@@ -118,25 +118,25 @@ class Peer:
         if username_input in users and auth_instance.check_password(cryptography.decrypt(password_input), users[username_input]):
             result = self.server_connection_socket.send(
                 f'{auth_instance.create_access_token({username_input: password_input})},1'.encode(FORMAT))
-            logging.info(f"[SERVER] sendall result: {result}")
+            # logging.info(f"[SERVER] sendall result: {result}")
 
         else:
             result = self.server_connection_socket.send(
                 'ERROR,4'.encode(FORMAT))
-            logging.info(f"[SERVER] sendall result: {result}")
+            # logging.info(f"[SERVER] sendall result: {result}")
 
     # Function used to check if the user's token is valid
 
     def check_token(self, sample, token):
         result = self.server_connection_socket.send(
             f'{auth_instance.verify_access_token(token)},3'.encode(FORMAT))
-        logging.info(f"[SERVER] sendall result: {result}")
+        # logging.info(f"[SERVER] sendall result: {result}")
 
     # Function used to start the Share Screen Process
 
     def share(self, sample1, sample2):
         result = self.server_connection_socket.send("image".encode('utf-8'))
-        logging.info(f"[SERVER] sendall result: {result}")
+        # logging.info(f"[SERVER] sendall result: {result}")
         subprocess.run(['python', 'app/server_screen.py'])
 
 # -------------------------------------------------------------------------------------------------------------------------
@@ -170,6 +170,9 @@ class Peer:
             getattr(self, client_action)(parts[0])
         elif message == "image":
             subprocess.run(['python', 'app/client_screen.py'])
+            end = str(input())
+            if end == 'q':
+                self.close_connection()
 
     # Function used to handle the response from the server when it comes
     # to login and credentials the user input
@@ -198,7 +201,7 @@ class Peer:
         try:
             result = self.socket.sendall(
                 f'{username},{cryptography.encrypt(password)},555'.encode(FORMAT))
-            logging.info(f"[CLIENT] sendall result: {result}")
+            # logging.info(f"[CLIENT] sendall result: {result}")
         except Exception as e:
             logging.info(
                 f"[CLIENT] Error sending message to server on Try to Login function: {e}")
@@ -208,7 +211,7 @@ class Peer:
         try:
             result = self.socket.sendall(
                 f"checktoken,{self.client_token},7".encode(FORMAT))
-            logging.info(f"[CLIENT] sendall result: {result}")
+            # logging.info(f"[CLIENT] sendall result: {result}")
         except Exception as e:
             logging.info(
                 f"[CLIENT] Error sending message to server on Check Action function: {e}")
@@ -217,7 +220,7 @@ class Peer:
     def send_share_msg(self):
         try:
             result = self.socket.send('screen,share,6'.encode(FORMAT))
-            logging.info(f"[CLIENT] send result: {result}")
+            # logging.info(f"[CLIENT] send result: {result}")
 
         except Exception as e:
             logging.info(

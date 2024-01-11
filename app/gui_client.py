@@ -46,7 +46,7 @@ class GUI_Client(QMainWindow):
 
 
 install_libraries()
-action = input("""Press 1 to Share Screen\nPress 2 to see Shared Screen\n
+action = input("""\n\n\n\nPress 1 to Share Screen\nPress 2 to see Shared Screen\n
                (REMEMBER: The app will work only in case there is a desktop/user sharing their screen)\n\nInput: """)
 if action == '1':
     server_instance = peer(None)
