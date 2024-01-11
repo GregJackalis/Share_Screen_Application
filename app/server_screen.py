@@ -59,11 +59,10 @@ def run_live():
             # Break the loop if 'q' is pressed
             if cv2.waitKey(1) == ord('q'):
                 break
-        except OSError as e:
-            if e.errno == 9:
-                logging.info(
-                    f"[SERVER] Client with address {addr} has lost connection.")
-                break
+        except Exception as e:
+            logging.info(
+                f"[SERVER] Client with address {addr} has lost connection.")
+            break
 
     # Release resources
     client_socket.close()
