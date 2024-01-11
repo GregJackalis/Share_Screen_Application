@@ -16,6 +16,18 @@ Whether you're a computer science student or just a coding enthusiast, this proj
 The application includes nine Python Scripts, one .ui file, and other files (such as .env, requirements to be downloaded, and so on). The application started being made from the "Front-End" part which it was about setting up the GUI and the gui_client script. Then, it was time for Socket Programming to take place, and even though at first two different scripts (one for client and one for server) were made, I decided afterwards that I want to make as a Peer-to-Peer connection.<br>
 Therefore, the peer.py script contains a class that can behave as a Client but also as Server, the only difference is that the Server is in charge for checking the credentials- using the the authentication.py script- and to also start sharing their screen once everything is set up. The client's behaviour attributes on the other hand, gives the user the ability to try and sign in as many times as they want and once the credentials are correct, to connect to the remote screen.<br><br>
 
+## How to Run
+ **In order for the application to work, the main.py script needs to be run.** <br>
+ - This can happen by going to the directory of the project's folder and running the command:
+        &nbsp;&nbsp;python app/main.py
+ - Then, the program will start the library installation progress and once that is completed the gui_client.py script will start running
+ - Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to:
+1) "Share their Screen" (act as a Server) <br>
+&nbsp;&nbsp;or <br> 
+2) See Shared Screen (act as a Client)
+
+
+
 ## Scripts and their Purpose
 ### my_gui.ui
 -----------------------------------------------------------------------------------------------------
