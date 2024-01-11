@@ -41,16 +41,16 @@ The application implements a variety of features and technologies, such as:
 
 ## Testing
 I run my program through a couple of softwares to test its security and integrity, while also run some custom tests at home and at uni. Different scenarios where used on different types of computers, trying to find as many "holes" in my program as possible. After a lot of tests since the very beginning of this project up to this point, the application is fully runnable and as safe as possible. <br>
-- The information that is logged on my program is about the Serve side, and can be:<br>
+- **The information that is logged on my program is about the Serve side, and can be:**<br>
     2024-01-112024-01-11 12:15:10,985 - INFO - Connected to ('127.0.0.1', 50001)<br>
     2024-01-11 12:15:17,798 - INFO - [SERVER] Client with address ('127.0.0.1', 50001) has lost connection.<br>
     2024-01-11 12:15:17,798 - INFO - [SERVER] Server is not waiting for messages anymore
     0,911 - DEBUG - push QWidget centralwidget<br>
-- Also information about the Client is logged, and it's in this format:<br>
+- **Also information about the Client is logged, and it's in this format:**<br>
     2024-01-11 12:45:40,124 - INFO - [CLIENT] Successfully connected to Server!<br>
     2024-01-11 12:45:44,086 - INFO - [CLIENT] Correct Credentials!<br>
     2024-01-11 12:45:45,314 - INFO - [CLIENT] User verification succedeed!<br>
-- And also information about the Sharing Screen Process is logged and it looks like this:
+- **And also information about the Sharing Screen Process is logged and it looks like this:**
     2024-01-11 12:45:50,273 - INFO - [CLIENT] Remote Screen is ready. Connecting...<br>
     2024-01-11 12:45:50,273 - INFO - Client run_live() called at 2024-01-11 12:45:50<br>
     2024-01-11 12:45:50,274 - INFO - [CLIENT] Connected to the Share Screen Peer<br>
