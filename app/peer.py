@@ -3,7 +3,7 @@
 # https://github.com/GregJackalis/Share_Screen_Application/blob/main/Documentation.md
 
 
-from PyQt5.QtCore import QThread, pyqtSignal, QCoreApplication
+from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QMessageBox
 from vignere_cipher import cryptography
 import socket
@@ -13,6 +13,7 @@ from auth import auth_instance, users
 import logging
 # Importing centralised Log File
 from log_config import configure_logging_peer
+from client_thread import ClientThread
 
 # Configure logging
 configure_logging_peer()
@@ -23,36 +24,6 @@ configure_logging_peer()
 #    there is a specific "cap" on the bytes of the message.
 FORMAT = 'utf-8'
 HEADER = 1024
-
-
-# Class used to maintain a thread when it comes to the Client-Side receiving messages from the
-# Server-Side
-class ClientThread(QThread):
-    data_received = pyqtSignal(str)
-
-    def __init__(self, conn_socket):
-        self.connetion_socket = conn_socket
-        super().__init__()
-
-    def run(self):
-        while True:
-
-            # Client Socket is used to receive messages
-            msg = self.connetion_socket.recv(HEADER)
-
-            if not msg:
-                break
-
-            try:
-                decoded_msg = msg.decode(FORMAT)
-
-                self.data_received.emit(decoded_msg)
-            except:
-                # Emitting the message it means that the value inside the parenthesis,
-                # which is type str, will be sent to the function "process_received_data"
-                self.data_received.emit('image')
-
-        logging.info("[CLIENT] Thread has stopped running")
 
 # -------------------------------------------------------------------------------------------------------------------------
 

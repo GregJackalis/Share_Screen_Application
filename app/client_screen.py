@@ -65,7 +65,7 @@ def run_live():
                 frame = pickle.loads(frame_data)
             except EOFError:
                 logging.info(
-                    "[CLIENT]EOFError: Connection closed unexpectedly.")
+                    "[CLIENT] EOFError: Connection closed unexpectedly.")
                 break
             except Exception as e:
                 logging.info(f"[CLIENT] Error unpickling frame: {e}")
