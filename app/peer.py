@@ -45,7 +45,9 @@ class Peer:
     # SERVER BEHAVIOUR
     def listen(self):
         self.socket.bind((self.host, self.port))
-        self.socket.listen()
+
+        # Accepts only 1 Client because the Server can Share their Screen to only one Client
+        self.socket.listen(1)
         logging.info("Server is open and listening...")
 
         self.server_connection_socket, address = self.socket.accept()
@@ -77,8 +79,7 @@ class Peer:
                     logging.info(
                         f"[SERVER] Client with address {address} has lost connection.")
                     self.server_connection_socket.close()
-                    break
-
+                self.listen()
         logging.info("[SERVER] Server is not waiting for messages anymore")
 
     # Function used to check login credentials passed from the user and through the client socket

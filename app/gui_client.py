@@ -7,7 +7,6 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 import sys
 from peer import Peer as peer
-from install_libraries import install_libraries
 
 
 class GUI_Client(QMainWindow):
@@ -45,7 +44,6 @@ class GUI_Client(QMainWindow):
         client_instance.close_connection()
 
 
-install_libraries()
 action = input("""\n\n\n\nPress 1 to Share Screen\nPress 2 to see Shared Screen\n
                (REMEMBER: The app will work only in case there is a desktop/user sharing their screen)\n\nInput: """)
 if action == '1':
