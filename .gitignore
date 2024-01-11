@@ -1,3 +1,9 @@
 ScreenSVenv/
 .env
 app/__pycache__
+DOCUMENTATION.pdf
+Assessment Rubric/
+Log_File_Peer.txt
+Log_File_Share_Screen_Client.txt
+Log_File_Share_Screen_Server.txt
+Assignment1_Implementation_Log.xlsx

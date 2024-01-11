@@ -1,4 +1,5 @@
 import subprocess
+from install_libraries import install_libraries
 
 
 def run_app():
@@ -6,4 +7,5 @@ def run_app():
 
 
 if __name__ == "__main__":
+    install_libraries()
     run_app()
