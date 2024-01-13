@@ -57,7 +57,7 @@ I run my program through a couple of softwares to test its security and integrit
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**<br>
     2024-01-11 12:45:47,105 - INFO - [SERVER] Starting to share...
     2024-01-11 12:45:47,105 - INFO - [SERVER] Server run_live() called at 2024-01-11 12:45:47
-    2024-01-11 12:45:47,106 - INFO - [SERVER] Image Server Peer is Listening...
+    2024-01-11 12:45:47,106 - INFO - [SERVER] Image Server Peer is Listening...<br><br>
 
 
 
@@ -65,9 +65,7 @@ I run my program through a couple of softwares to test its security and integrit
 1) First of all, python needs to be installed on the computer (along with its built-in pip-library)
 2) Once python is set up on the computer, the **venv-setup.sh** file needs to be run, so that a Virtual Environment will be made and no libraries will be installed locally on the machine that the application is running on.
 (**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the setup-venv.sh file needs to be run two times as well)
-3) Then, after the venv-setup.sh script is run and a virtual environment is made, the user will need to run the command **python app/main.py**
-
- **In order for the application to work, the main.py script needs to be run first.** <br>
+3) **Then, In order for the application to work, the main.py script needs to be run first.** <br>
  - This can happen by going to the directory of the project's folder and running the command:
         &nbsp;&nbsp;python app/main.py
  - Then, the program will start the library installation progress and once that is completed the gui_client.py script will start running
