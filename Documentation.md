@@ -69,8 +69,8 @@ I run my program through a couple of softwares to test its security and integrit
 - If you're on **MacOS** then you should run the **venv-setup.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Click on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
 
 3) Then, since one of those files is runnning, a Virtual Environment is made and no libraries will be installed locally on the machine that the application is running on.
-(**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the setup-venv.sh file needs to be run two times as well)
-3) **Then, In order for the application to work, the main.py script needs to be run first.** <br>
+(**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the setup-venv.sh file needs to be run two times as well) <br>
+4) **Then, In order for the application to work, the main.py script needs to be run first.** <br>
  - This can happen by running on the Virtual Environment "Share_Screen_Venv" the command:
         &nbsp;&nbsp;python app/main.py
  - Then, the program will start the library installation progress and once that is completed the gui_client.py script will start running
@@ -78,7 +78,7 @@ I run my program through a couple of softwares to test its security and integrit
 1) "Share their Screen" (act as a Server) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or <br> 
 2) See Shared Screen (act as a Client) <br><br>
-- When the Graphical Interface pops up on the screen, the User will be asked to etner a username and a password. This data is pre-made and are the following:
+- When the Graphical Interface pops up on the screen, the User will be asked to etner a username and a password. This data is pre-made and are the following:<br>
 &nbsp;&nbsp;&nbsp; **Username**: Grigorios &nbsp;&nbsp; **Password**: 12345678 <br>
 &nbsp;&nbsp;&nbsp; **Username**: jackalis &nbsp;&nbsp; **Password**: logmein <br>
 &nbsp;&nbsp;&nbsp; **Username**: socket.programming &nbsp;&nbsp; **Password**: 15012024
