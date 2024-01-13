@@ -66,7 +66,7 @@ I run my program through a couple of softwares to test its security and integrit
 
 2) Once python is set up on the computer:
 - If you're on **Windows** then you should run the **venv-setup.bat**,  should the **venv-setup.sh** file needs to be run
-- If you're on **MacOS** then you should run the **venv-setup.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Clicj on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
+- If you're on **MacOS** then you should run the **venv-setup.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Click on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
 
 3) Then, since one of those files is runnning, a Virtual Environment is made and no libraries will be installed locally on the machine that the application is running on.
 (**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the setup-venv.sh file needs to be run two times as well)
@@ -77,10 +77,10 @@ I run my program through a couple of softwares to test its security and integrit
  - Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to:
 1) "Share their Screen" (act as a Server) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or <br> 
-2) See Shared Screen (act as a Client) <br><br><br>
+2) See Shared Screen (act as a Client) <br><br>
 - When the Graphical Interface pops up on the screen, the User will be asked to etner a username and a password. This data is pre-made and are the following:
-&nbsp;&nbsp;&nbsp; **Username**: Grigorios &nbsp;&nbsp; **Password**: 12345678
-&nbsp;&nbsp;&nbsp; **Username**: jackalis &nbsp;&nbsp; **Password**: logmein
+&nbsp;&nbsp;&nbsp; **Username**: Grigorios &nbsp;&nbsp; **Password**: 12345678 <br>
+&nbsp;&nbsp;&nbsp; **Username**: jackalis &nbsp;&nbsp; **Password**: logmein <br>
 &nbsp;&nbsp;&nbsp; **Username**: socket.programming &nbsp;&nbsp; **Password**: 15012024
 
 
