@@ -66,7 +66,7 @@ I run my program through a couple of softwares to test its security and integrit
 2) Once python is set up on the computer, the **venv-setup.sh** file needs to be run, so that a Virtual Environment will be made and no libraries will be installed locally on the machine that the application is running on.
 (**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the setup-venv.sh file needs to be run two times as well)
 3) **Then, In order for the application to work, the main.py script needs to be run first.** <br>
- - This can happen by going to the directory of the project's folder and running the command:
+ - This can happen by running on the Virtual Environment "Share_Screen_Venv" the command:
         &nbsp;&nbsp;python app/main.py
  - Then, the program will start the library installation progress and once that is completed the gui_client.py script will start running
  - Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to:
