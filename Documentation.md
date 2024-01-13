@@ -65,8 +65,9 @@ I run my program through a couple of softwares to test its security and integrit
 1) First of all, python needs to be installed on the computer (along with its built-in pip-library)
 
 2) Once python is set up on the computer:
-- If you're on **Windows** then you should run the **venv-setup.bat**,  should the **venv-setup.sh** file needs to be run
-- If you're on **MacOS** then you should run the **venv-setup.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Click on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
+- If you're on **Windows** then you should run the **venv-setup-windows.bat** file.
+
+- If you're on **MacOS** then you should run the **venv-setup-mac.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Click on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
 
 3) Then, since one of those files is runnning, a Virtual Environment is made and no libraries will be installed locally on the machine that the application is running on.
 (**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the setup-venv.sh file needs to be run two times as well) <br>
