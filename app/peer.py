@@ -3,7 +3,7 @@
 # https://github.com/GregJackalis/Share_Screen_Application/blob/main/Documentation.md
 
 
-from PyQt5.QtCore import QCoreApplication
+from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtWidgets import QMessageBox
 from vignere_cipher import cryptography
 import socket
@@ -174,6 +174,13 @@ class Peer:
             result = self.socket.sendall(
                 f'{username},{cryptography.encrypt(password)},555'.encode(FORMAT))
             # logging.info(f"[CLIENT] sendall result: {result}")
+
+        except socket.error as e:  # Except case for when the server isn't available
+            self.make_box(
+                "Server is not available. Please make sure\n\tserver is running")
+            logging.info(
+                "[CLIENT] Server is not available. It is possible that is not running.")
+
         except Exception as e:
             logging.info(
                 f"[CLIENT] Error sending message to server on Try to Login function: {e}")
@@ -184,6 +191,13 @@ class Peer:
             result = self.socket.sendall(
                 f"checktoken,{self.client_token},7".encode(FORMAT))
             # logging.info(f"[CLIENT] sendall result: {result}")
+
+        except socket.error as e:  # Except case for when the server isn't available
+            self.make_box(
+                "Server is not available. Please make sure\n\tserver is running")
+            logging.info(
+                "[CLIENT] Server is not available. It is possible that is not running.")
+
         except Exception as e:
             logging.info(
                 f"[CLIENT] Error sending message to server on Check Action function: {e}")

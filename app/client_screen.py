@@ -78,7 +78,9 @@ def run_live():
                 break
 
         except KeyboardInterrupt:
-            print("Keyboard interrupt detected. Exiting.")
+            logging.info(
+                "[CLIENT] Client closed from the user's command (Ctrl + C)")
+            print("[CLIENT] Client closed from the user's command (Ctrl + C)")
             break
 
     # Release resources

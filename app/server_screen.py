@@ -59,6 +59,12 @@ def run_live():
             # Break the loop if 'q' is pressed
             if cv2.waitKey(1) == ord('q'):
                 break
+
+        except KeyboardInterrupt:
+            logging.info(
+                "[SERVER] Server closed from the user's command (Ctrl + C)")
+            print("[SERVER] Server closed from the user's command (Ctrl + C)")
+
         except Exception as e:
             logging.info(
                 f"[SERVER] Client with address {addr} has lost connection.")
