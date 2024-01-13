@@ -165,4 +165,8 @@ This script contains three different functions, each one responsible for logging
 
 ### installing_libraries.py
 -----------------------------------------------------------------------------------------------------
-Last piece of the puzzle, this script is used to create a function that will take care the setup of the application on the machine that is running. In order for the application to run, the correct libraries on the correct versions need to be installed, and that's what this script does by using the requirements.txt file + a few other libraries that are explicitly installed, in order make the program run error-free.
+Last piece of the puzzle, this script is used to create a function that will take care the setup of the application on the machine that is running. In order for the application to run, the correct libraries on the correct versions need to be installed, and that's what this script does by using the requirements.txt file + a few other libraries that are explicitly installed, in order make the program run error-free.<br><br><br>
+
+### venv-setup.sh
+-----------------------------------------------------------------------------------------------------
+This is a script used to make a temporary Virtual Environment so that when the requirements and libraries of the application are installed, they won't get stored in the machine. Then on the venv that is made and is opened in the terminal, the "python app/main.py" command needs to be run to trigger the setting up of the applicaition. Once the terminal is closed where the Virtual Environment is running, the venv will be deactivated and deleted.
