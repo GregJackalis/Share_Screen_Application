@@ -70,7 +70,7 @@ I run my program through a couple of softwares to test its security and integrit
 - If you're on **MacOS** then you should run the **venv-setup-mac.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Click on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
 
 3) Then, since one of those files is runnning, a Virtual Environment is made and no libraries will be installed locally on the machine that the application is running on.
-(**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the setup-venv.sh file needs to be run two times as well) <br>
+(**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the venv setup file needs to be run 2 times) <br>
 4) **Then, In order for the application to work, the main.py script needs to be run first.** <br>
  - This can happen by running on the Virtual Environment "Share_Screen_Venv" the command:
         &nbsp;&nbsp;python app/main.py
@@ -173,6 +173,6 @@ This script contains three different functions, each one responsible for logging
 -----------------------------------------------------------------------------------------------------
 Last piece of the puzzle, this script is used to create a function that will take care the setup of the application on the machine that is running. In order for the application to run, the correct libraries on the correct versions need to be installed, and that's what this script does by using the requirements.txt file + a few other libraries that are explicitly installed, in order make the program run error-free.<br><br><br>
 
-### venv-setup.sh
+### venv-setup-mac.sh && venv-setup-windows.bat
 -----------------------------------------------------------------------------------------------------
-This is a script used to make a temporary Virtual Environment so that when the requirements and libraries of the application are installed, they won't get stored in the machine. Then on the venv that is made and is opened in the terminal, the "python app/main.py" command needs to be run to trigger the setting up of the applicaition. Once the terminal is closed where the Virtual Environment is running, the venv will be deactivated and deleted.
+These scripts are used to make a temporary Virtual Environment so that when the requirements and libraries of the application are installed, they won't get stored in the machine. Then on the venv that is made and is opened in the terminal, the "python app/main.py" command needs to be run to trigger the setting-up process of the applicaition. Once the terminal is closed where the Virtual Environment is running, the venv will be deactivated and deleted.
