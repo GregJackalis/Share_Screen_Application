@@ -13,9 +13,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     python3 -m venv "$VENV_DIR"
     source "$VENV_DIR/bin/activate"
 
-    # Change to the directory where your Python script is located
-    cd "/Users/grigoriostsakalis/Desktop/College 2023-2024/Networks & Security (Python)/For Assignment/Assignment 1/Share Screen Application (GitHub)"
-
+    # Change to the directory where your script is located
+    cd "$(dirname "$0")"
+    
     # Inform the user that the virtual environment is activated
     echo "Virtual environment activated. You are now in the virtual environment."
 
