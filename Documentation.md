@@ -80,7 +80,7 @@ I run my program through a couple of softwares to test its security and integrit
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or <br> 
 2) See Shared Screen (act as a Client) <br><br>
 - When the Graphical Interface pops up on the screen, the User will be asked to etner a username and a password. This data is pre-made and are the following:<br>
-&nbsp;&nbsp;&nbsp; **Username**: Grigorios &nbsp;&nbsp; **Password**: 12345678 <br>
+&nbsp;&nbsp;&nbsp; **Username**: gregory &nbsp;&nbsp; **Password**: 12345678 <br>
 &nbsp;&nbsp;&nbsp; **Username**: jackalis &nbsp;&nbsp; **Password**: logmein <br>
 &nbsp;&nbsp;&nbsp; **Username**: socket.programming &nbsp;&nbsp; **Password**: 15012024
 
