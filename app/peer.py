@@ -35,7 +35,7 @@ class Peer:
 
         # IP Address and Ports used by both Client-like and Server-like behaviours
         self.host = '0.0.0.0'
-        self.port = 50501
+        self.port = 50500
 
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
