@@ -11,11 +11,21 @@ import pickle
 import struct
 import time
 import logging
+import platform
+import subprocess
 # Importing centralised Log File
 from log_config import configure_logging_share_screen_server
 
 # Configure logging
 configure_logging_share_screen_server()
+
+
+def get_host_address():
+    # Check the operating system and set the host address accordingly
+    if platform.system() == 'Windows':
+        return '127.0.0.1'  # localhost for Windows
+    else:
+        return '0.0.0.0'  # bind to all available interfaces for Linux/macOS
 
 
 def run_live():
@@ -27,7 +37,7 @@ def run_live():
 
     # Create a socket to listen for connections
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('', 50506))
+    server_socket.bind((get_host_address(), 50506))
     server_socket.listen(5)
 
     logging.info("[SERVER] Image Server Peer is Listening...")
@@ -35,6 +45,9 @@ def run_live():
     # Accept a connection
     client_socket, addr = server_socket.accept()
     logging.info(f"[SERVER] Accepted connection from {addr}")
+
+    subprocess.run(['pip', 'install', 'opencv-python'], check=True)
+    import cv2
 
     while True:
         try:

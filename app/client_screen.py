@@ -10,11 +10,21 @@ import pickle
 import struct
 import time
 import logging
+import platform
+import subprocess
 # Importing centralised Log File
 from log_config import configure_logging_share_screen_client
 
 # Configure logging
 configure_logging_share_screen_client()
+
+
+def get_host_address():
+    # Check the operating system and set the host address accordingly
+    if platform.system() == 'Windows':
+        return '127.0.0.1'  # localhost for Windows
+    else:
+        return '0.0.0.0'  # bind to all available interfaces for Linux/macOS
 
 
 def run_live():
@@ -23,9 +33,11 @@ def run_live():
 
     # Create a socket to connect to the server
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('', 50506))
+    client_socket.connect((get_host_address(), 50506))
     logging.info("[CLIENT] Connected to the Share Screen Peer")
 
+    subprocess.run(['pip', 'install', 'opencv-python'], check=True)
+    import cv2
     # Receive screen frames from the server
     while True:
         try:

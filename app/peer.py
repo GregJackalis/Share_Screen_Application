@@ -14,6 +14,7 @@ import logging
 # Importing centralised Log File
 from log_config import configure_logging_peer
 from client_thread import ClientThread
+import platform
 
 # Configure logging
 configure_logging_peer()
@@ -34,21 +35,31 @@ class Peer:
         self.gui_window = gui_window
 
         # IP Address and Ports used by both Client-like and Server-like behaviours
-        self.host = '0.0.0.0'
-        self.port = 50500
+        self.host = self.get_host_address()
+        self.port = 50501
 
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    def get_host_address(self):
+        # Check the operating system and set the host address accordingly
+        if platform.system() == 'Windows':
+            return '127.0.0.1'  # localhost for Windows
+        else:
+            return '0.0.0.0'  # bind to all available interfaces for Linux/macOS
 
 # -------------------------------------------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------------------------------------
 
     # SERVER BEHAVIOUR
     def listen(self):
-        self.socket.bind((self.host, self.port))
+        try:
+            self.socket.bind((self.host, self.port))
 
-        # Accepts only 1 Client because the Server can Share their Screen to only one Client
-        self.socket.listen(1)
-        logging.info("Server is open and listening...")
+            # Accepts only 1 Client because the Server can Share their Screen to only one Client
+            self.socket.listen(1)
+            logging.info("Server is open and listening...")
+        except Exception as e:
+            print(f"[SERVER] Problem when starting server: {e}")
 
         self.server_connection_socket, address = self.socket.accept()
         logging.info(f"Connected to {address}")
