@@ -3,7 +3,7 @@
 # https://github.com/GregJackalis/Share_Screen_Application/blob/main/Documentation.md
 
 
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QApplication, QMessageBox, QMainWindow
 from PyQt5 import uic
 import sys
 from peer import Peer as peer
