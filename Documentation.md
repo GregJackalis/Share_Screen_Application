@@ -64,25 +64,43 @@ I run my program through a couple of softwares to test its security and integrit
 ## How to Run
 1) First of all, python needs to be installed on the computer (along with its built-in pip-library)
 
-2) Once python is set up on the computer:
-- If you're on **Windows** then you should run the **venv-setup-windows.bat** file.
+2) Once python is set up on the computer, you will need to create a **Virtual Environment**:
+- If you're on **Windows** then you should run first the **venv-setup-windows.bat** file.
 
 - If you're on **MacOS** then you should run the **venv-setup-mac.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Click on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
 
 3) Then, since one of those files is runnning, a Virtual Environment is made and no libraries will be installed locally on the machine that the application is running on.
 (**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the venv setup file needs to be run 2 times) <br>
-4) **Then, In order for the application to work, the main.py script needs to be run first.** <br>
+
+4) Then the requirements of the application need to be installed before running the app. <br>
+In order for the requirements and libraries to be installed run this command: python app/install_libraries.py <br>
+(NOTE: I originally put the libraries installation on the main script so that the requirements will be installed automatically but because of windows taking a bit longer to install all the requirements for each time the application starts to run, I decided it would be faster if the install_libraries.py script was run first before the actual application) <br><br>
+
+
+**Great! Now you're ready to run the application!** <br>
+**Run the main.py script:** <br>
  - This can happen by running on the Virtual Environment "Share_Screen_Venv" the command:
         &nbsp;&nbsp;python app/main.py
+
+## NOTE: Due to windows and mac differences and issues I came accross:
+- I had to make a new function that checks the operating system that the script is running on, so that the appropriate local address is used.
+- In case the PyQt5 module cannot be found even though it has been downloaded successfully, instead of running the main.py script, try to run this command to start the application: python app/gui_client.py <br>
+**(NOTE: This should be run in both cases you're trying to connect as a server or a client)**
+<br><br
+>
  - Then, the program will start the library installation progress and once that is completed the gui_client.py script will start running
- - Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to:
-1) "Share their Screen" (act as a Server) <br>
+ - Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to: <br>
+
+**"Share their Screen" (act as a Server)**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or <br> 
-2) See Shared Screen (act as a Client) <br><br>
+**See Shared Screen (act as a Client)** <br><br>
+
 - When the Graphical Interface pops up on the screen, the User will be asked to etner a username and a password. This data is pre-made and are the following:<br>
 &nbsp;&nbsp;&nbsp; **Username**: gregory &nbsp;&nbsp; **Password**: 12345678 <br>
 &nbsp;&nbsp;&nbsp; **Username**: jackalis &nbsp;&nbsp; **Password**: logmein <br>
 &nbsp;&nbsp;&nbsp; **Username**: socket.programming &nbsp;&nbsp; **Password**: 15012024
+
+
 
 
 
