@@ -9,23 +9,6 @@ import importlib
 
 def install_libraries():
     try:
-        with open('requirements.txt', 'r') as file:
-            libraries = file.read().splitlines()
-
-        for library in libraries:
-            try:
-                importlib.import_module(library)
-                print(f"{library} is already installed.")
-            except ImportError:
-                subprocess.run(['pip', 'install', library], check=True)
-                print(f"{library} installed successfully!")
-
-        print("All libraries checked and installed or already present.")
-
-    except Exception as e:
-        print(f"Error during installation: {e}")
-
-    try:
         importlib.import_module('PyQt5')
         print(f"PyQt5 is already installed.")
     except ImportError:
