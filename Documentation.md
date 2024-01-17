@@ -65,12 +65,11 @@ I run my program through a couple of softwares to test its security and integrit
 1) First of all, python version 3.11.5 needs to be installed on the computer (along with its built-in pip-library)
 
 2) Once python is set up on the computer, you will need to create a **Virtual Environment**:
-- If you're on **Windows** then you should run first the **venv-setup-windows.bat** file.
-
 - If you're on **MacOS** then you should run the **venv-setup-mac.sh** file (NOTE: To double click and run the .sh file on MacOS, you will need to Right Click on the File, then press "Get Info" and then on the "Open with:" selection, you should choose the Terminal app)
 
-3) Then, since one of those files is runnning, a Virtual Environment is made and no libraries will be installed locally on the machine that the application is running on.
-(**REMEMBER**: In order for the application to work, the main.py script needs to be run 2 times, meaning that the venv setup file needs to be run 2 times) <br>
+- If you're on **Windows** then you should run first the **venv-setup-windows.bat** file. <br>
+**BUT** because of issues with windows os, for the application to successfuly run without any errors, it is advisable to **NOT** use a virtual environemnt. Try installing the libraries locally and running the scripts locally as well.
+
 
 4) Then the requirements of the application need to be installed before running the app. <br>
 In order for the requirements and libraries to be installed run this command: python app/install_libraries.py <br>
@@ -79,17 +78,23 @@ In order for the requirements and libraries to be installed run this command: py
 
 **Great! Now you're ready to run the application!** <br>
 **Run the main.py script:** <br>
- - This can happen by running on the Virtual Environment "Share_Screen_Venv" the command:
+ - This can happen by running on the Virtual Environment "Share_Screen_Venv" (or locally after installing the libraries) the command:
         &nbsp;&nbsp;python app/main.py
 
-## NOTE: Due to windows and mac differences and issues I came accross:
+### NOTE: Due to windows and mac differences and issues I came accross (for issues I found on windows):
 - I had to make a new function that checks the operating system that the script is running on, so that the appropriate local address is used.
 - In case the PyQt5 module cannot be found even though it has been downloaded successfully, instead of running the main.py script, try to run this command to start the application: python app/gui_client.py <br>
-**(NOTE: This should be run in both cases you're trying to connect as a server or a client)**
-<br><br
->
- - Then, the program will start the library installation progress and once that is completed the gui_client.py script will start running
- - Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to: <br>
+
+- In case the application works fine but on the share screen process it doesn't work due to modules not being found (or something else), as I mentioned before, please install the requirements locally by running the commands: <br>
+python app/install_libraries.py <br>
+and <br>
+python app/main.py <br>
+on the terminal of the application's folder (right click while in project's folder and choose the option "Open in Terminal")
+
+- After finishing running the application you should run the script uninstall_libraries in order to clean up your pc from the libraries you just installed: python app/uninstall_libraries.py
+
+
+- Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to: <br>
 
 **"Share their Screen" (act as a Server)**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or <br> 
@@ -187,9 +192,13 @@ In the "while True" loop, the client awaits for incoming image data continiously
 This script contains three different functions, each one responsible for logging information to different .txt files. The first function is about the Client and Server Peers, and every information related to that connection is logged to a "Log_File_Peer.txt" file, which gets overwritten everytime the program is run. The last two functions, are used in the Share Screen Process to log information independently for the Server-Image side and the Client-Image side. I explicitly chose to use two different functions and to create separate log files for each, because unlike in the Peer script, the data that are sent between the two side in the Share Screen Process are fast and a lot, resulting in one side overwriting information for the other side. <br><br><br>
 
 
-### installing_libraries.py
+### install_libraries.py
 -----------------------------------------------------------------------------------------------------
-Last piece of the puzzle, this script is used to create a function that will take care the setup of the application on the machine that is running. In order for the application to run, the correct libraries on the correct versions need to be installed, and that's what this script does by using the requirements.txt file + a few other libraries that are explicitly installed, in order make the program run error-free.<br><br><br>
+This script is used to create a function that will take care the setup of the application on the machine that is running. In order for the application to run, the correct libraries on the correct versions need to be installed, and that's what this script does by using the requirements.txt file + a few other libraries that are explicitly installed, in order make the program run error-free.<br><br><br>
+
+### uninstall_libraries.py
+-----------------------------------------------------------------------------------------------------
+This script is used explicitly from windows user in order to uninstall the libraries that were installed locally. This script was made due to issues I faced when testing my application on a windows machine. The usage of a virtual environment wasn't working so the best solution is to just install the libraries and run the scripts locally on the computer. Once the user is done with the application, they can use this script that will automatically clean up their machine from the application's library.
 
 ### venv-setup-mac.sh && venv-setup-windows.bat
 -----------------------------------------------------------------------------------------------------
