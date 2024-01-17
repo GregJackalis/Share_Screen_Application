@@ -198,7 +198,7 @@ This script is used to create a function that will take care the setup of the ap
 
 ### uninstall_libraries.py
 -----------------------------------------------------------------------------------------------------
-This script is used explicitly from windows user in order to uninstall the libraries that were installed locally. This script was made due to issues I faced when testing my application on a windows machine. The usage of a virtual environment wasn't working so the best solution is to just install the libraries and run the scripts locally on the computer. Once the user is done with the application, they can use this script that will automatically clean up their machine from the application's library.
+This script is used explicitly from windows user in order to uninstall the libraries that were installed locally. This script was made due to issues I faced when testing my application on a windows machine. The usage of a virtual environment wasn't working so the best solution is to just install the libraries and run the scripts locally on the computer. Once the user is done with the application, they can use this script that will automatically clean up their machine from the application's library.<br><br><br>
 
 ### venv-setup-mac.sh && venv-setup-windows.bat
 -----------------------------------------------------------------------------------------------------
