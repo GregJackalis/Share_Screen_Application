@@ -66,3 +66,6 @@ def install_libraries():
     except ImportError:
         subprocess.run(['pip', 'install', 'pyautogui'], check=True)
         print(f"pyautogui installed successfully!")
+
+
+install_libraries()
