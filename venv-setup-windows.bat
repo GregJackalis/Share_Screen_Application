@@ -1,30 +1,18 @@
 @echo off
 
-REM The requirements are installed in the virtual environment created by this script
-REM Once the app is closed, the venv is deleted.
-REM For more info on how to use this file please visit my documentation.
+set VENV_NAME=share_screen_venv
 
-REM Set the virtual environment directory
-set VENV_DIR=Share_Screen_Venv
+echo Creating virtual environment %VENV_NAME%...
+python -m venv %VENV_NAME%
 
-REM Get the directory where the batch script is located
-set SCRIPT_DIR=%~dp0
+echo Activating virtual environment %VENV_NAME%...
 
-REM Change to the script's directory
-cd /d "%SCRIPT_DIR%"
-
-REM Check the operating system
-if "%OSTYPE%" == "msys" (
-    REM Windows
-    python -m venv "%VENV_DIR%"
-    call "%VENV_DIR%\Scripts\activate"
-
-    REM Inform the user that the virtual environment is activated
-    echo Virtual environment activated. You are now in the virtual environment.
-
-    REM Deactivate the virtual environment when the user exits
-    deactivate
+if "%OS%"=="Windows_NT" (
+    call %VENV_NAME%\Scripts\activate.bat
 ) else (
-    echo Unsupported operating system
-    exit /b 1
+    source %VENV_NAME%/bin/activate
 )
+
+echo Virtual environment %VENV_NAME% is now active.
+
+cmd /k
