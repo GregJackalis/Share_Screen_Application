@@ -46,6 +46,7 @@ def run_live():
     client_socket, addr = server_socket.accept()
     logging.info(f"[SERVER] Accepted connection from {addr}")
 
+    # trying to install cv2 library again due to issues faced with windows os
     subprocess.run(['pip', 'install', 'opencv-python'], check=True)
     import cv2
 

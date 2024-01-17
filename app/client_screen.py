@@ -36,6 +36,7 @@ def run_live():
     client_socket.connect((get_host_address(), 50506))
     logging.info("[CLIENT] Connected to the Share Screen Peer")
 
+    # trying to install cv2 library again due to issues faced with windows os
     subprocess.run(['pip', 'install', 'opencv-python'], check=True)
     import cv2
     # Receive screen frames from the server
