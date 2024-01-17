@@ -62,7 +62,7 @@ I run my program through a couple of softwares to test its security and integrit
 
 
 ## How to Run
-1) First of all, python needs to be installed on the computer (along with its built-in pip-library)
+1) First of all, python version 3.11.5 needs to be installed on the computer (along with its built-in pip-library)
 
 2) Once python is set up on the computer, you will need to create a **Virtual Environment**:
 - If you're on **Windows** then you should run first the **venv-setup-windows.bat** file.
