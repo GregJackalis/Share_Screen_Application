@@ -11,6 +11,8 @@ def uninstall_libraries():
         'pyautogui',
         'PyQt5-Qt5',
         'PyQt5-sip'
+        'numpy',
+        'pillow'
     ]
 
     for library in libraries_to_uninstall:
