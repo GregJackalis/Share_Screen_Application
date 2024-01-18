@@ -81,18 +81,28 @@ In order for the requirements and libraries to be installed run this command: py
  - This can happen by running on the Virtual Environment "Share_Screen_Venv" (or locally after installing the libraries) the command:
         &nbsp;&nbsp;python app/main.py
 
-### NOTE: Due to windows and mac differences and issues I came accross (for issues I found on windows):
+### NOTE: Due to windows and mac differences and issues I came accross (mostly on Windows):
 - I had to make a new function that checks the operating system that the script is running on, so that the appropriate local address is used.
-- In case the PyQt5 module cannot be found even though it has been downloaded successfully, instead of running the main.py script, try to run this command to start the application: python app/gui_client.py <br>
 
-- In case the application works fine but on the share screen process it doesn't work due to modules not being found (or something else), as I mentioned before, please install the requirements locally by running the commands: <br>
-python app/install_libraries.py <br>
-and <br>
-python app/main.py <br>
-on the terminal of the application's folder (right click while in project's folder and choose the option "Open in Terminal")
+- In case the PyQt5 module cannot be found even though it has been downloaded successfully, instead of running the main.py script, try to run these two commands to start first before starting the application: python app/uninstall_libraries.py <br> and <br> python app/install_libraries.py<br><br>
 
-- After finishing running the application you should run the script uninstall_libraries in order to clean up your pc from the libraries you just installed: python app/uninstall_libraries.py
+and then run the command: python app/main.py
 
+- In case even after the above step, the application is not starting, try one of the followings:
+1) Uninstall PyQt5 library with these commands:<br>
+pip uninstall -y PyQt5 <br>
+pip uninstall -y PyQt5-Qt5 <br>
+pip uninstall -y PyQt5-sip <br>
+and install it again with this command:
+pip install PyQt5
+
+2) Try running the gui_client script instead the main.py script with this command:
+python app/main.py
+
+3) Do not use the .bat or .sh files to create a Virtual Environment, and install the libraries locally on your computer (right click while in project's folder and choose the option "Open in Terminal") with this command:<br>
+python app/install_libraries.py  <br>
+and once you're done using the app, unistall the libraries using this command:<br>
+python app/install_libraries.py
 
 - Once the gui_client.py script is running, a text will pop up asking the user to choose whether they want to: <br>
 
