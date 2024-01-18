@@ -8,7 +8,9 @@ def uninstall_libraries():
         'python-jose',
         'opencv-python',
         'bcrypt',
-        'pyautogui'
+        'pyautogui',
+        'PyQt5-Qt5',
+        'PyQt5-sip'
     ]
 
     for library in libraries_to_uninstall:
