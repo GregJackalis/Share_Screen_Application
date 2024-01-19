@@ -23,3 +23,9 @@ def configure_logging_share_screen_client():
     # Using filemode='w' to overwrite the existing log file
     logging.basicConfig(filename='Log_File_Share_Screen_Client.txt', filemode='w',
                         level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+def configure_logging_state_machine():
+    # Using filemode='w' to overwrite the existing log file
+    logging.basicConfig(filename='Log_File_State_Machine.txt', filemode='w',
+                        level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
