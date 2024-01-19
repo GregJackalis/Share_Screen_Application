@@ -18,25 +18,27 @@ Therefore, the peer.py script contains a class that can behave as a Client but a
 
 ## Features
 The application implements a variety of features and technologies, such as:
-1) **Socket Programming**: The application uses a Peer-to-Peer model of socket programming. I achieved this by making a singular app peer.py that includes a Class "Peer", in which class a variety of attributes are used in order to make the class behave as a Client or Server.
+1) **Socket Programming**: The application uses both Peer-to-Peer and Client-Server models of socket programming. I achieved this by making a singular app peer.py that includes a Class "Peer", in which a variety of attributes are used in order to make the class behave as a Client or Server. Then for the Screen Sharing process a Client-Server model was used to transmit image data between the two peers.
 
-2) **JTW Token**: This libary was used in order to make a Verfication Token and "lock" the possibility of a User (on the Client Side) to connect to the Server and spectate their screen. The token is made from three parts, and information for the data used for these parts is saved in a .env file:<br>
+2) **Authentication**: The application implements an authentication feature that checks whether the given credentials are correct/valid or not. The application compares the given credential, with a few pre-made profiles (information about them on the How to Run section). Then, with some more features (right below this feature) the authentication and data transmission process runs safely and without any errors.
+
+3) **JTW Token**: This libary was used in order to make a Verfication Token and "lock" the possibility of a User (on the Client Side) to connect to the Server and spectate their screen. The token is made from three parts, and information for the data used for these parts is saved in a .env file:<br>
 &nbsp;&nbsp; - The header that includes the type of algorithm and token. <br>
 &nbsp;&nbsp; - The payload which includes the data that we want to encrypt and also connect with the token (this data could be a specific username with an authorized/verified password). <br>
 &nbsp;&nbsp; - The signature which is made from the header, payload, and signature. <br>
 
-3) **Hashing**: To decrease the possibility of an attacker breaching my application, I decided to use an combination of ways to encrypt data. In the auth.py script where the JWT Token libary is implemented along with a few functions, Hashing Encryption is also implemented and used. It is used to hash the saved passwords, so that even in case the attacker gets through, it won't be able to see the sensitive information. More information about it can be found on the auth.py script explanation later on.
+4) **Hashing**: To decrease the possibility of an attacker breaching my application, I decided to use an combination of ways to encrypt data. In the auth.py script where the JWT Token libary is implemented along with a few functions, Hashing Encryption is also implemented and used. It is used to hash the saved passwords, so that even in case the attacker gets through, it won't be able to see the sensitive information. More information about it can be found on the auth.py script explanation later on.
 
-4) **Vignere Cipher**: On top of hashing and using a JWT Token, I decided to also encrypt the data that is transmitted through the Client and the Server. The cipher is called along with its encryption and decryption functionalitis, while also in order for the cipher to be implemented, a secret key needs to be used. Again, just like with the JWT Token, the key  is stored in a .env file and the vignere_cipher.py script uses that key to do all the encryptions and decryptions.
+5) **Vignere Cipher**: On top of hashing and using a JWT Token, I decided to also encrypt the data that is transmitted through the Client and the Server. The cipher is called along with its encryption and decryption functionalitis, while also in order for the cipher to be implemented, a secret key needs to be used. Again, just like with the JWT Token, the key  is stored in a .env file and the vignere_cipher.py script uses that key to do all the encryptions and decryptions.
 
-4) **PyQt GUI**: Using the PyQt5 Library and the QtDesigner application, I made my own interface to help the Client's have a better and more simplified understanding of the app and its functionality. Through the interface, and properly naming my GUI elements, I gave functionality to the buttons and blank fields. The functionality of these elements is then connected with the Peer-to-Peer model.
+6) **PyQt GUI**: Using the PyQt5 Library and the QtDesigner application, I made my own interface to help the Client's have a better and more simplified understanding of the app and its functionality. Through the interface, and properly naming my GUI elements, I gave functionality to the buttons and blank fields. The functionality of these elements is then connected with the Peer-to-Peer model.
 
-5) **Log Files**: Log Files are made through the log_config.py script. Then, other scripts implement the log files feature in order to log information into 3 different .txt type files: one for the peer to peer connection, one for the client screen side, and one for the server screen side.
+7) **Log Files**: Log Files are made through the log_config.py script. Then, other scripts implement the log files feature in order to log information into 4 different .txt type files: one for the peer to peer connection, one for the client screen side, one for the server screen side, and one for the state machine to log information about which state is the application currently on.
 
-6) **Add-Ons**: <br>
-- In order for the application to run, requirements need to be installed, and this is achieved by using the subprocess library to install the requirements needed.
+8) **Add-Ons**: <br>
+- In order for the application to run, requirements need to be installed, and this is achieved by using the **install_libraries.py** script.
 - For the share screen process, two different scripts are used which both of them implement a simple Client-Server model to send image data and also show them on the screen.
-- In order for each side to understand on which state the application is currently on, a state machine is used, while also specific numbers are sent with the data, to Client and Server. The state machine feature helps the two sides understand on which state (and which function to use) based on the number that they receive in their received data. <br><br>
+- In order for each side to understand on which state the application is currently on, a **state machine** is used, while also specific numbers are sent with the data, to Client and Server. The state machine feature helps the two sides understand on which state (and which function to use) based on the number that they receive in their received data. <br><br>
 
 
 ## Testing
