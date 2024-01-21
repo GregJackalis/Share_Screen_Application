@@ -84,6 +84,10 @@ In order for the requirements and libraries to be installed run this command: py
         &nbsp;&nbsp;python app/main.py
 
 ### NOTE: Due to windows and mac differences and issues I came accross (mostly on Windows):
+- The interface should look like this: ![Alt text](/Extras/GUI.png) <br>
+
+but instead when it's run on windows it's broken. Due to tight deadline and having issues with os compatibility and the share screen process, my time was limited and I didn't manage to fix the Graphical User Interface on time.
+
 - I had to make a new function that checks the operating system that the script is running on, so that the appropriate local address is used.
 
 - In case the PyQt5 module cannot be found even though it has been downloaded successfully, instead of running the main.py script, try to run these two commands to start first before starting the application: python app/uninstall_libraries.py <br> and <br> python app/install_libraries.py<br><br>
