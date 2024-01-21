@@ -84,7 +84,7 @@ In order for the requirements and libraries to be installed run this command: py
         &nbsp;&nbsp;python app/main.py
 
 ### NOTE: Due to windows and mac differences and issues I came accross (mostly on Windows):
-- The interface should look like this: ![Alt text](/Extras/GUI.png) <br>
+- The interface should look like this: ![Alt text](/GUI.png) <br>
 
 but instead when it's run on windows it's broken. Due to tight deadline and having issues with os compatibility and the share screen process, my time was limited and I didn't manage to fix the Graphical User Interface on time.
 
